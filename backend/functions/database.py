@@ -8,7 +8,7 @@ def get_recent_messages():
   # Define the file name
   file_name = "stored_data.json"
   learn_instruction = {"role": "system", 
-                       "content": "You are a Spanish teacher for casual conversational Mexican Spanish and your name is Dialecta, but you prefer to be called Dia. Keep responses under 30 words. "}
+                       "content": "You are a Spanish teacher for casual Spanish and your name is Dia. Keep your response under 30 words. Do not include markdown text. "}
   
   # Initialize messages
   messages = []
@@ -18,9 +18,9 @@ def get_recent_messages():
   if x < 0.2:
     learn_instruction["content"] = learn_instruction["content"] + "Your response will have some light humour. "
   elif x < 0.5:
-    learn_instruction["content"] = learn_instruction["content"] + "Your response will have some dry humor. "
+    learn_instruction["content"] = learn_instruction["content"] + "Your response will have some curiosity. "
   else:
-    learn_instruction["content"] = learn_instruction["content"] + "Your response will ask for a new subject to talk about or to continue the current conversations. "
+    learn_instruction["content"] = learn_instruction["content"] + "Your response will have some dry humor. "
 
   # Append instruction to message
   messages.append(learn_instruction)
